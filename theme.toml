@@ -1,0 +1,9 @@
+name = "Win95"
+license = "MIT"
+licenselink = "https://github.com/AbhinavMir/win95-hugo"
+description = "A Windows 95 themed Hugo blog theme"
+tags = ["blog", "windows95", "retro", "personal"]
+min_version = "0.80.0"
+
+[author]
+  name = "August"

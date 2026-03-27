@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="panel">
+  <div class="panel-title">{{ .Title }}</div>
+  <div class="panel-inset content">
+    <div class="post-meta">
+      {{ .Date.Format "January 2, 2006" }}{{ with .Params.author }} &middot; {{ . }}{{ end }}{{ if .ReadingTime }} &middot; {{ .ReadingTime }} min read{{ end }}
+      {{ with .Params.tags }}
+      <div class="tags">
+        {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ .Content }}
+  </div>
+  <div class="statusbar" style="display:flex; justify-content:space-between;">
+    <span>{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">&laquo; {{ .Title }}</a>{{ end }}</span>
+    <span>{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} &raquo;</a>{{ end }}</span>
+  </div>
+</div>
+{{ end }}
